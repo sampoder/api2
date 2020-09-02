@@ -6,6 +6,15 @@
     - ALLOWLISTED_FIELD_2
     - ALLOWLISTED_FIELD_3
   # Feel free to PR your own changes in following the example above ^
+  z:
+    baseID: appsbb0wd5N9AbSP0
+    Meetings:
+    - Status
+    - Unique Users Joined
+  CDN:
+    baseID: appnjnz8RYdlkJfIu
+    Links:
+    - Permalink
   SDP Priority Activations:
     baseID: apple9fiV81JsRytC
     SDP Priority Activations:
@@ -45,6 +54,7 @@
     - Name
     - Slack Channel ID
     - Leader Slack IDs
+    - Leader Names
     - Address City
     - Address State
     - Address Postal Code
@@ -52,6 +62,7 @@
     - Club URL
     - Latitude
     - Longitude
+    - Dummy
     Badges:
     - ID
     - Name
@@ -70,6 +81,9 @@
     - Submission Deadline
     - Judge Full Name
     - GP Value
+    Mail Missions:
+    - Status
+    - Mail Team Thread Timestamp
   Command Center Schedule:
     baseID: appGvXhgsuXhCTrOr
     Schedule:
@@ -116,6 +130,8 @@
     - Status
     Sendy:
     - Status
+    Wire Transfers:
+    - Status
   Ships:
     baseID: appnzwlmqTft69NhW
     Ships:
@@ -155,11 +171,15 @@
     - Updates
     - Streak Count
     - Display Streak
+    - Max Streaks
     - Full Slack Member?
+    - Webring
     - CSS URL
+    - Audio URL
     - Custom Domain
     - Website
     - GitHub
+    - Streaks Toggled Off
     Updates:
     - ID
     - Slack Account
@@ -168,3 +188,10 @@
     - Text
     - Attachments
     - Mux Playback IDs
+    - Filtered Emoji Reactions
+    - Slack URL
+  SOM Hardware Party:
+    baseID: appxfNQJLNfCdcyUN
+    Players:
+    - Name
+    - Score

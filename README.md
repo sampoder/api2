@@ -1,7 +1,8 @@
-<h1 align="center">API2</h1>
+<h1 align="center">Airbridge</h1>
 <p align="center">
-  <a href="https://circleci.com/gh/hackclub/api2">
-    <img alt="CircleCI" src="https://img.shields.io/circleci/project/github/hackclub/api2.svg">
+  <a href="https://github.com/hackclub/airbridge/actions">
+    <img alt="test" src="https://github.com/hackclub/airbridge/workflows/test/badge.svg">
+    <img alt="format" src="https://github.com/hackclub/airbridge/workflows/format/badge.svg">
   </a>
 </p>
 <p align="center"><i>The bridges tying Hack Club's services together. (WIP) Illustrated below by <a href="https://gh.maxwofford.com">@maxwofford</a>.</i></p>
@@ -11,11 +12,12 @@
 
 Our [previous API](https://github.com/hackclub/api/blob/master/README.md) was really good at a couple things. It hasn't been touched in years and it's still providing password-less authentication as a service at scale.
 
-Hack Club (HQ & community) needs a service for easily reading & writing information that will last the test of time the same way our original API still handles authentication. API2 will create this by providing a JSON interface to an Airtable backend.
+Hack Club (HQ & community) needs a service for easily reading & writing information that will last the test of time the same way our original API still handles authentication. Airbridge will create this by providing a JSON interface to an Airtable backend.
 
 ## Try the latest version here: [v0.1](./src/v0.1/README.md)
 
 Version list:
+
 - [v0.1](./src/v0.1/README.md)
 - [v0](./src/v0/README.md)
 
@@ -23,7 +25,7 @@ Version list:
 
 ```sh
 # Set it up locally
-git clone https://github.com/hackclub/api2 && cd api2
+git clone https://github.com/hackclub/airbridge && cd airbridge
 pnpm install
 
 # Run locally with nodemon

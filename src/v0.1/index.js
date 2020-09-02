@@ -1,6 +1,8 @@
 import { airtableCreate, airtableLookup } from "./utils.js"
+import NodeCache from "node-cache"
 import express from "express"
 const router = express.Router()
+const cache = new NodeCache()
 
 router.use((req, res, next) => {
   res.locals.start = Date.now()
@@ -9,6 +11,10 @@ router.use((req, res, next) => {
   res.locals.meta = {
     params: { ...req.params },
     query: { ...req.query },
+    cache: {
+      key: cacheKey(req),
+      ...cache.getStats(),
+    },
   }
 
   if (req.query.authKey) {
@@ -18,6 +24,11 @@ router.use((req, res, next) => {
 
   next()
 })
+
+function cacheKey(req) {
+  const { meta, cache, ...filteredQuery } = req.query
+  return req.baseUrl + req._parsedUrl.pathname + JSON.stringify(filteredQuery)
+}
 
 function respond(err, req, res, next) {
   res.locals.meta.duration = Date.now() - res.locals.start
@@ -47,6 +58,12 @@ function respond(err, req, res, next) {
     } else {
       res.json(res.locals.response)
     }
+  }
+
+  if (!res.locals.meta.cache.pulledFrom && res.statusCode == 200) {
+    const key = cacheKey(req)
+    console.log("Saving result to my cache with key", key)
+    cache.set(key, res.locals.response)
   }
 
   next()
@@ -91,13 +108,30 @@ router.get("/:base/:tableName", async (req, res, next) => {
       respond(err, req, res, next)
     }
   }
-  try {
-    const result = await airtableLookup(options, res.locals.authKey)
-    res.locals.response = result
-
-    respond(null, req, res, next)
-  } catch (err) {
-    respond(err, req, res, next)
+  if (req.query.cache) {
+    console.log("Cache flag enabled", cacheKey(req))
+    const cacheResult = cache.get(cacheKey(req))
+    if (cacheResult) {
+      console.log("Found results in cache!")
+      res.locals.meta.cache.pulledFrom = true
+      res.locals.response = cacheResult
+      respond(null, req, res, next)
+    } else {
+      console.log("Nothing found in cache!")
+      try {
+        res.locals.response = await airtableLookup(options, res.locals.authKey)
+        respond(null, req, res, next)
+      } catch (err) {
+        respond(err, req, res, next)
+      }
+    }
+  } else {
+    try {
+      res.locals.response = await airtableLookup(options, res.locals.authKey)
+      respond(null, req, res, next)
+    } catch (err) {
+      respond(err, req, res, next)
+    }
   }
 })
 

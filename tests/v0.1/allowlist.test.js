@@ -25,31 +25,31 @@ describe("load allowlist info", () => {
 })
 
 describe("GET allowlisted routes", () => {
+  jest.setTimeout(30000)
+
   const routes = []
   const tables = yaml.safeLoad(
     fs.readFileSync(path.resolve(__dirname, allowlistPath), "utf8")
   )
-  Object.keys(tables).forEach(tableN => {
+  Object.keys(tables).forEach((tableN) => {
     const bases = tables[tableN]
-    Object.keys(bases).forEach(baseN => {
-      if (
-        tableN != "YOUR_AIRTABLE_NAME" &&
-        baseN != "baseID"
-      ) {
+    Object.keys(bases).forEach((baseN) => {
+      if (tableN != "YOUR_AIRTABLE_NAME" && baseN != "baseID") {
         routes.push({ base: baseN, table: tableN })
       }
     })
   })
 
-  routes.forEach(route => {
+  routes.forEach((route) => {
     const endpointBase = `/v0.1/${route.table}/${route.base}`
     const options = { maxRecords: 1 }
     const endpoint = `${endpointBase}?meta=true&select=${JSON.stringify(
       options
     )}`
-    it(`loads ${endpointBase} with successful status code`, async () => {
+    it(`loads ${endpointBase} with successful status code`, async (done) => {
       const res = await request(app).get(endpoint)
       expect(res.statusCode).toEqual(200)
+      done()
     })
   })
 })

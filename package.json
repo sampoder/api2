@@ -8,8 +8,9 @@
     "start": "node build/index.js",
     "build": "babel src -d build --copy-files",
     "heroku-postbuild": "npm run build",
-    "fmt": "npx prettier \"{tests/**,src/**,}/*.js\" --write",
-    "test": "jest"
+    "fmt": "prettier \"{tests/**,src/**,}/*.js\" --write",
+    "fmtCheck": "prettier \"{tests/**,src/**,}/*.js\" --check",
+    "test": "jest --forceExit"
   },
   "keywords": [],
   "author": "Max Wofford <max@maxwofford.com>",
@@ -27,7 +28,8 @@
     "express": "^4.17.1",
     "friendly-words": "^1.1.10",
     "isomorphic-unfetch": "^3.0.0",
-    "js-yaml": "^3.13.1"
+    "js-yaml": "^3.13.1",
+    "node-cache": "^5.1.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
