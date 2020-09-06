@@ -52,6 +52,7 @@
   OnePwaa Camps:
     baseID: appNgvHZwssfzOj6q
     Camps:
+    - Slug
     - Camp Name
     - Sign Up Link
     - Start Date (Local Time Please)
