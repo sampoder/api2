@@ -49,3 +49,11 @@
     - ID
     - Name of Piece (from Remix of:)
     - Creator (from Remix of:)
+  OnePwaa Camps:
+    baseID: appNgvHZwssfzOj6q
+    Camps:
+    - Camp Name
+    - Sign Up Link
+    - Start Date (Local Time Please)
+    - End Date (Local Time Please)
+    - Time Zone (eg. GMT+9)
