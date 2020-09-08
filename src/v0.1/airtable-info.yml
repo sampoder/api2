@@ -6,39 +6,6 @@
     - ALLOWLISTED_FIELD_2
     - ALLOWLISTED_FIELD_3
   # Feel free to PR your own changes in following the example above ^
-  Summer of Making Streaks:
-    baseID: appRxhF9qVMLbxAXR
-    Slack Accounts:
-    - ID
-    - Username
-    - Avatar
-    - Updates
-    - Streak Count
-    - Display Streak
-    - Max Streaks
-    - Full Slack Member?
-    - Webring
-    - CSS URL
-    - Audio URL
-    - Custom Domain
-    - Website
-    - GitHub
-    - Streaks Toggled Off
-    Updates:
-    - ID
-    - Slack Account
-    - Post Time
-    - Message Timestamp
-    - Text
-    - Attachments
-    - Mux Playback IDs
-    - Filtered Emoji Reactions
-    - Slack URL
-  SOM Hardware Party:
-    baseID: appxfNQJLNfCdcyUN
-    Players:
-    - Name
-    - Score
   Arts Week Collab Hub:
     baseID: app6g0BqI09mPRxdp
     Posts:
