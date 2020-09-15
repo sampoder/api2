@@ -33,5 +33,4 @@
   MovieNight:
     baseID: appMd61LVb7gqeMC6
     People:
-    - Ticket
-    - Days
+    - ID
