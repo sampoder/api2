@@ -30,3 +30,9 @@
     - Header Image
     - Contact Email
     - Early Bird Pricing
+  MovieNight:
+    baseID: appMd61LVb7gqeMC6
+    Camps:
+    - Signed Up
+    - Ticket
+    - Days
