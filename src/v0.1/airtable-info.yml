@@ -36,3 +36,8 @@
     - ID
     - Days
     - Ticket
+  Democracy:
+    baseID: appX6jaDtaUYasWPc
+    Countries:
+    - Country
+    - Emoji
