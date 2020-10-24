@@ -68,6 +68,15 @@
     - CSS URL
   SportsEquip:
     baseID: apprtbHq6BHUIcUpH
+    Leases:
+    - Item
+    - Name
+    - Personal Email
+    - Parents Email
+    - Consent
+    - Collected
+    - Returned
+    - Time up from request?
     Students:
     - Personal Email
     - Consent
