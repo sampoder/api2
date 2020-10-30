@@ -86,6 +86,7 @@
     - Leases Count
   Links:
     baseID: appRx7BgzfXCOqJDv
+    Links:
     - slug
     - name
     - public
