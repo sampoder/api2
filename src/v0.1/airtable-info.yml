@@ -84,3 +84,10 @@
     - Personal Email
     - Consent
     - Leases Count
+  Links:
+    baseID: appRx7BgzfXCOqJDv
+    - slug
+    - name
+    - public
+    - title?
+    - description?
