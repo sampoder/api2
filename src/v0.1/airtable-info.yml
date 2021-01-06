@@ -92,3 +92,9 @@
     - public
     - title?
     - description?
+  Arsh:
+    baseID: appjw6Cxm5rC4EbZV
+    Monitored Stocks:
+    - Stock
+    - Price
+    - Price date
