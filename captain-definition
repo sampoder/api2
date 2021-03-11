@@ -1,4 +1,9 @@
  {
   "schemaVersion": 2,
-  "templateId": "node/15.11.0"
+  "dockerfileLines": [
+                        "FROM node:15.11.0",
+                        "RUN npm install",
+                        "RUN npm run build",
+                        "CMD [ \"npm\", \"start\" ]"
+                    ]
  }
