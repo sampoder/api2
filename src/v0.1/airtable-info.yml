@@ -4,7 +4,6 @@
     YOUR_BASE:
     - ALLOWLISTED_FIELD_1
     - ALLOWLISTED_FIELD_2
-    - ALLOWLISTED_FIELD_3
   # Feel free to PR your own changes in following the example above ^
   Arts Week Collab Hub:
     baseID: app6g0BqI09mPRxdp
